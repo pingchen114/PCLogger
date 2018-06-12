@@ -67,56 +67,58 @@ public struct Logger {
         fatalError("Do not init Logger without parameters.")
     }
     
-    static func reister(defaultSubsystem: String, defaultCategory: String, customLoggerType: LogWriterProtocol.Type = NullLogWriter.self) {
-        Logger.defaultSubSystem = defaultSubsystem
-        Logger.defaultCategory = defaultCategory
-        Logger.customLoggerType = customLoggerType
+    public static func reister(subsystem: String, category: String, customLoggerType: LogWriterProtocol.Type?) {
+        Logger.defaultSubSystem = subsystem
+        Logger.defaultCategory = category
+        if customLoggerType != nil {
+            Logger.customLoggerType = customLoggerType!
+        }
     }
 }
 
-extension Logger {
+public extension Logger {
     // MARK: Logger methods
-    func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         writer.default(message, args, dso)
     }
     
-    func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         writer.info(message, args, dso)
     }
     
-    func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         writer.debug(message, args, dso)
     }
     
-    func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         writer.error(message, args, dso)
     }
     
-    func fault(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func fault(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         writer.fault(message, args, dso)
     }
 }
 
-extension Logger {
+public extension Logger {
     // MARK: Default writer for general usage
     
-    static func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public static func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         defaultMethod.writerClass.defaultWriter.default(message, args, dso)
     }
     
-    static func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public static func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         defaultMethod.writerClass.defaultWriter.info(message, args, dso)
     }
     
-    static func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public static func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         defaultMethod.writerClass.defaultWriter.debug(message, args, dso)
     }
     
-    static func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public static func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         defaultMethod.writerClass.defaultWriter.error(message, args, dso)
     }
     
-    static func fault(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public static func fault(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         defaultMethod.writerClass.defaultWriter.fault(message, args, dso)
     }
 }

@@ -10,32 +10,32 @@ import Foundation
 import os.log
 
 @available(iOS 10.0, macOS 10.0, *)
-public struct OSLogWriter: LogWriterProtocol {
-    public static let defaultWriter: LogWriterProtocol = OSLogWriter(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
+ struct OSLogWriter: LogWriterProtocol {
+    static let defaultWriter: LogWriterProtocol = OSLogWriter(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
     
     private let writer: OSLog
     
-    public init(subsystem: String, category: String) {
+    init(subsystem: String, category: String) {
         writer = OSLog(subsystem: subsystem, category: category)
     }
     
-    public func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .default, dso: dso, message, args)
     }
     
-    public func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .info, dso: dso, message, args)
     }
     
-    public func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .debug, dso: dso, message, args)
     }
     
-    public func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .error, dso: dso, message, args)
     }
     
-    public func fault(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    func fault(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .fault, dso: dso, message, args)
     }
     

@@ -29,14 +29,14 @@ public protocol LogWriterProtocol {
     func fault(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer)
 }
 
-public struct NullLogWriter: LogWriterProtocol {
-    public static let defaultWriter: LogWriterProtocol = NullLogWriter(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
+struct NullLogWriter: LogWriterProtocol {
+    static let defaultWriter: LogWriterProtocol = NullLogWriter(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
     
-    public init(subsystem: String, category: String) {}
+    init(subsystem: String, category: String) {}
     
-    public func `default`(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {}
-    public func info(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {}
-    public func debug(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {}
-    public func error(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {}
-    public func fault(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {}
+    func `default`(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {}
+    func info(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {}
+    func debug(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {}
+    func error(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {}
+    func fault(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {}
 }

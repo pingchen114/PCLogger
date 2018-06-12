@@ -8,13 +8,13 @@
 
 import Foundation
 
-public struct NSLogWriter: LogWriterProtocol {
-    public static let defaultWriter: LogWriterProtocol = NSLogWriter(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
+struct NSLogWriter: LogWriterProtocol {
+    static let defaultWriter: LogWriterProtocol = NSLogWriter(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
     
     let subsystem: String
     let category: String
     
-    public init(subsystem: String, category: String) {
+    init(subsystem: String, category: String) {
         self.subsystem = subsystem
         self.category = category
     }
@@ -24,23 +24,23 @@ public struct NSLogWriter: LogWriterProtocol {
         NSLog(formattedString, args)
     }
     
-    public func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .default, dso: dso, message, args)
     }
     
-    public func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .info, dso: dso, message, args)
     }
     
-    public func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .debug, dso: dso, message, args)
     }
     
-    public func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .error, dso: dso, message, args)
     }
     
-    public func fault(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {
+    func fault(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {
         log(type: .fault, dso: dso, message, args)
     }
 }
