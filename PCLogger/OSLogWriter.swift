@@ -10,8 +10,8 @@ import Foundation
 import os.log
 
 @available(iOS 10.0, macOS 10.0, *)
- struct OSLogWriter: LogWriterProtocol {
-    static let defaultWriter: LogWriterProtocol = OSLogWriter(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
+ struct OSLogWriter: LogWriter {
+    static let defaultWriter: LogWriter = OSLogWriter(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
     
     private let writer: OSLog
     

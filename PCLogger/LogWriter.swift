@@ -16,11 +16,11 @@ public enum LogType {
     case fault
 }
 
-public protocol LogWriterProtocol {
+public protocol LogWriter {
     
     init(subsystem: String, category: String)
     
-    static var defaultWriter: LogWriterProtocol { get }
+    static var defaultWriter: LogWriter { get }
     
     func `default`(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer)
     func info(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer)
@@ -29,8 +29,8 @@ public protocol LogWriterProtocol {
     func fault(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer)
 }
 
-struct NullLogWriter: LogWriterProtocol {
-    static let defaultWriter: LogWriterProtocol = NullLogWriter(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
+struct NullLogWriter: LogWriter {
+    static let defaultWriter: LogWriter = NullLogWriter(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
     
     init(subsystem: String, category: String) {}
     

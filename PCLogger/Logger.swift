@@ -17,7 +17,7 @@ public struct Logger {
         case nsLog
         case custom
         
-        var writerClass: LogWriterProtocol.Type {
+        var writerClass: LogWriter.Type {
             switch self {
             case .disabled:
                 return NullLogWriter.self
@@ -36,7 +36,7 @@ public struct Logger {
     }
     
     private static var _defaultMethod: LoggerMethod? = nil
-    private static var customLoggerType: LogWriterProtocol.Type = NullLogWriter.self
+    private static var customLoggerType: LogWriter.Type = NullLogWriter.self
     static var defaultSubSystem: String = Bundle.main.bundleIdentifier ?? ""
     static var defaultCategory: String = ""
     static var defaultMethod: LoggerMethod {
@@ -56,7 +56,7 @@ public struct Logger {
     }
     
     public let method: LoggerMethod
-    public let writer: LogWriterProtocol
+    public let writer: LogWriter
     
     init(subsystem: String?, category: String?, method: LoggerMethod = Logger.defaultMethod) {
         self.method = method
@@ -67,7 +67,7 @@ public struct Logger {
         fatalError("Do not init Logger without parameters.")
     }
     
-    public static func reister(subsystem: String, category: String, customLoggerType: LogWriterProtocol.Type?) {
+    public static func reister(subsystem: String, category: String, customLoggerType: LogWriter.Type?) {
         Logger.defaultSubSystem = subsystem
         Logger.defaultCategory = category
         if customLoggerType != nil {

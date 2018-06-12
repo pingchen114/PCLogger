@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct NSLogWriter: LogWriterProtocol {
-    static let defaultWriter: LogWriterProtocol = NSLogWriter(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
+struct NSLogWriter: LogWriter {
+    static let defaultWriter: LogWriter = NSLogWriter(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
     
     let subsystem: String
     let category: String
