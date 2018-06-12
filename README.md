@@ -1,4 +1,3 @@
-# PCLogger
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+# PCLogger (under development)
 
 Lighweight Logger framework for iOS/Mac projects.
