@@ -58,6 +58,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE12BB0620D0F24D00EF3F6F /* LogWriter */ = {
+			isa = PBXGroup;
+			children = (
+				DEDDC0D620CFF34B00C77C3B /* LogWriter.swift */,
+				DEDDC0D520CFF34B00C77C3B /* NSLogWriter.swift */,
+				DEDDC0D720CFF34B00C77C3B /* OSLogWriter.swift */,
+			);
+			path = LogWriter;
+			sourceTree = "<group>";
+		};
 		DEDDC0B120CFF33D00C77C3B = {
 			isa = PBXGroup;
 			children = (
@@ -81,9 +91,7 @@
 			children = (
 				DEDDC0BE20CFF33D00C77C3B /* PCLogger.h */,
 				DEDDC0DB20CFF35400C77C3B /* Logger.swift */,
-				DEDDC0D620CFF34B00C77C3B /* LogWriter.swift */,
-				DEDDC0D520CFF34B00C77C3B /* NSLogWriter.swift */,
-				DEDDC0D720CFF34B00C77C3B /* OSLogWriter.swift */,
+				DE12BB0620D0F24D00EF3F6F /* LogWriter */,
 				DEDDC0BF20CFF33D00C77C3B /* Info.plist */,
 			);
 			path = PCLogger;
