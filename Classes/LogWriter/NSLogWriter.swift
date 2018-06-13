@@ -3,13 +3,13 @@
 //  PCCanvasKit
 //
 //  Created by Pingchen Su on 2018/06/12.
-//  Copyright © 2016 Pingchen Su. Licensed under MIT.
+//  Copyright © 2018 Pingchen Su. Licensed under MIT.
 //
 
 import Foundation
 
-struct NSLogWriter: LogWriter {
-    static let defaultWriter: LogWriter = NSLogWriter()
+public struct NSLogWriter: LogWriter {
+    public static let defaultWriter: LogWriter = NSLogWriter()
     
     let subsystem: String
     let category: String
@@ -19,7 +19,7 @@ struct NSLogWriter: LogWriter {
         self.category = Logger.defaultCategory
     }
     
-    init(subsystem: String, category: String) {
+    public init(subsystem: String, category: String) {
         self.subsystem = subsystem
         self.category = category
     }
@@ -39,23 +39,23 @@ struct NSLogWriter: LogWriter {
         NSLog(formattedString, args)
     }
     
-    func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .default, dso: dso, message, args)
     }
     
-    func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .info, dso: dso, message, args)
     }
     
-    func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .debug, dso: dso, message, args)
     }
     
-    func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .error, dso: dso, message, args)
     }
     
-    func fault(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {
+    public func fault(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {
         log(type: .fault, dso: dso, message, args)
     }
 }

@@ -3,15 +3,15 @@
 //  PCCanvasKit
 //
 //  Created by Pingchen Su on 2018/06/12.
-//  Copyright © 2016 Pingchen Su. Licensed under MIT.
+//  Copyright © 2018 Pingchen Su. Licensed under MIT.
 //
 
 import Foundation
 import os.log
 
 @available(OSX 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *)
- struct OSLogWriter: LogWriter {
-    static let defaultWriter: LogWriter = OSLogWriter()
+public struct OSLogWriter: LogWriter {
+    public static let defaultWriter: LogWriter = OSLogWriter()
     
     private let writer: OSLog
     
@@ -23,27 +23,27 @@ import os.log
         }
     }
     
-    init(subsystem: String, category: String) {
+    public init(subsystem: String, category: String) {
         writer = OSLog(subsystem: subsystem, category: category)
     }
     
-    func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .default, dso: dso, message, args)
     }
     
-    func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .info, dso: dso, message, args)
     }
     
-    func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .debug, dso: dso, message, args)
     }
     
-    func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .error, dso: dso, message, args)
     }
     
-    func fault(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func fault(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
         log(type: .fault, dso: dso, message, args)
     }
     

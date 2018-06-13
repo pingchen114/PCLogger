@@ -1,15 +1,14 @@
 //
-//  PCLogger_tvOSTests.swift
-//  PCLogger-tvOSTests
+//  PCLoggerTests.swift
+//  PCLoggerTests
 //
 //  Created by Pingchen Su on 2018/06/12.
-//  Copyright © 2016 Pingchen Su. Licensed under MIT.
+//  Copyright © 2018 Pingchen Su. Licensed under MIT.
 //
 
 import XCTest
-@testable import PCLogger_tvOS
 
-class PCLogger_tvOSTests: XCTestCase {
+class PCLoggerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

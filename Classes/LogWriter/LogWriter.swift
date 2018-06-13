@@ -3,12 +3,12 @@
 //  PCCanvasKit
 //
 //  Created by Pingchen Su on 2018/06/12.
-//  Copyright © 2016 Pingchen Su. Licensed under MIT.
+//  Copyright © 2018 Pingchen Su. Licensed under MIT.
 //
 
 import Foundation
 
-public enum LogType {
+enum LogType {
     case `default`
     case info
     case debug
@@ -27,18 +27,4 @@ public protocol LogWriter {
     func debug(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer)
     func error(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer)
     func fault(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer)
-}
-
-struct NullLogWriter: LogWriter {
-    static let defaultWriter: LogWriter = NullLogWriter()
-    
-    private init() {}
-    
-    init(subsystem: String, category: String) {}
-    
-    func `default`(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {}
-    func info(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {}
-    func debug(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {}
-    func error(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {}
-    func fault(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {}
 }

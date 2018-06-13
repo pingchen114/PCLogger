@@ -3,10 +3,11 @@
 //  PCLogger
 //
 //  Created by Pingchen Su on 2018/06/12.
-//  Copyright © 2016 Pingchen Su. Licensed under MIT.
+//  Copyright © 2018 Pingchen Su. Licensed under MIT.
 //
 
-#import <UIKit/UIKit.h>
+
+#import <Foundation/Foundation.h>
 
 //! Project version number for PCLogger.
 FOUNDATION_EXPORT double PCLoggerVersionNumber;
