@@ -13,7 +13,7 @@ public struct Logger {
     
     public enum LoggerMethod {
         case disabled
-        @available(iOS, introduced: 10.0, message:"osLog is only available from iOS 10 or later") case osLog
+        @available(OSX 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *) case osLog
         case nsLog
         case custom
         
@@ -42,7 +42,7 @@ public struct Logger {
     static var defaultMethod: LoggerMethod {
         get {
             if _defaultMethod == nil {
-                if #available(iOS 10, *) {
+                if #available(OSX 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *) {
                     _defaultMethod = .osLog
                 } else {
                     _defaultMethod = .nsLog

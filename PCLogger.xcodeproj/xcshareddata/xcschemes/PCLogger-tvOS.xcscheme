@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DEDDC0BA20CFF33D00C77C3B"
-               BuildableName = "PCLogger.framework"
-               BlueprintName = "PCLogger"
+               BlueprintIdentifier = "DEDE8D6420D10AE800A3FAC7"
+               BuildableName = "PCLogger_tvOS.framework"
+               BlueprintName = "PCLogger-tvOS"
                ReferencedContainer = "container:PCLogger.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DEDDC0C320CFF33D00C77C3B"
-               BuildableName = "PCLoggerTests.xctest"
-               BlueprintName = "PCLoggerTests"
+               BlueprintIdentifier = "DEDE8D6C20D10AE800A3FAC7"
+               BuildableName = "PCLogger-tvOSTests.xctest"
+               BlueprintName = "PCLogger-tvOSTests"
                ReferencedContainer = "container:PCLogger.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DEDDC0BA20CFF33D00C77C3B"
-            BuildableName = "PCLogger.framework"
-            BlueprintName = "PCLogger"
+            BlueprintIdentifier = "DEDE8D6420D10AE800A3FAC7"
+            BuildableName = "PCLogger_tvOS.framework"
+            BlueprintName = "PCLogger-tvOS"
             ReferencedContainer = "container:PCLogger.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DEDDC0BA20CFF33D00C77C3B"
-            BuildableName = "PCLogger.framework"
-            BlueprintName = "PCLogger"
+            BlueprintIdentifier = "DEDE8D6420D10AE800A3FAC7"
+            BuildableName = "PCLogger_tvOS.framework"
+            BlueprintName = "PCLogger-tvOS"
             ReferencedContainer = "container:PCLogger.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DEDDC0BA20CFF33D00C77C3B"
-            BuildableName = "PCLogger.framework"
-            BlueprintName = "PCLogger"
+            BlueprintIdentifier = "DEDE8D6420D10AE800A3FAC7"
+            BuildableName = "PCLogger_tvOS.framework"
+            BlueprintName = "PCLogger-tvOS"
             ReferencedContainer = "container:PCLogger.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

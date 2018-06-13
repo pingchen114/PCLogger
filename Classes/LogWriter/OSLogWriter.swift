@@ -9,7 +9,7 @@
 import Foundation
 import os.log
 
-@available(iOS 10.0, macOS 10.0, *)
+@available(OSX 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *)
  struct OSLogWriter: LogWriter {
     static let defaultWriter: LogWriter = OSLogWriter()
     
@@ -67,7 +67,7 @@ import os.log
     }
 }
 
-@available(iOS 10.0, macOS 10.0, *)
+@available(OSX 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *)
 fileprivate extension LogType {
     var osLogType: OSLogType {
         switch self {
