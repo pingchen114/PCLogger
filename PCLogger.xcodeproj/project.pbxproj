@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE1B9CEC20D11C8E002F401C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1B9CEB20D11C8E002F401C /* Activity.swift */; };
+		DE1B9CED20D11C8E002F401C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1B9CEB20D11C8E002F401C /* Activity.swift */; };
+		DE1B9CEE20D11C8E002F401C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1B9CEB20D11C8E002F401C /* Activity.swift */; };
+		DE1B9CEF20D11C8E002F401C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1B9CEB20D11C8E002F401C /* Activity.swift */; };
 		DEDDC0C520CFF33D00C77C3B /* PCLogger_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDDC0BB20CFF33D00C77C3B /* PCLogger_iOS.framework */; };
-		DEDDC0CA20CFF33D00C77C3B /* PCLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDC0C920CFF33D00C77C3B /* PCLoggerTests.swift */; };
+		DEDDC0CA20CFF33D00C77C3B /* PCLogger_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDC0C920CFF33D00C77C3B /* PCLogger_iOSTests.swift */; };
 		DEDDC0CC20CFF33D00C77C3B /* PCLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = DEDDC0BE20CFF33D00C77C3B /* PCLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DEDDC0D820CFF34B00C77C3B /* NSLogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDC0D520CFF34B00C77C3B /* NSLogWriter.swift */; };
 		DEDDC0D920CFF34B00C77C3B /* LogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDC0D620CFF34B00C77C3B /* LogWriter.swift */; };
 		DEDDC0DA20CFF34B00C77C3B /* OSLogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDC0D720CFF34B00C77C3B /* OSLogWriter.swift */; };
 		DEDDC0DC20CFF35500C77C3B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDC0DB20CFF35400C77C3B /* Logger.swift */; };
-		DEDE8D3620D10A2200A3FAC7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDDC0BF20CFF33D00C77C3B /* Info.plist */; };
 		DEDE8D4520D10A6D00A3FAC7 /* PCLogger_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDE8D3C20D10A6D00A3FAC7 /* PCLogger_macOS.framework */; };
 		DEDE8D4A20D10A6D00A3FAC7 /* PCLogger_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE8D4920D10A6D00A3FAC7 /* PCLogger_macOSTests.swift */; };
 		DEDE8D4C20D10A6D00A3FAC7 /* PCLogger_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = DEDE8D3E20D10A6D00A3FAC7 /* PCLogger_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,12 +37,6 @@
 		DEDE8D8720D10E1900A3FAC7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDC0DB20CFF35400C77C3B /* Logger.swift */; };
 		DEDE8D8820D10E1900A3FAC7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDC0DB20CFF35400C77C3B /* Logger.swift */; };
 		DEDE8D8920D10E1A00A3FAC7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDC0DB20CFF35400C77C3B /* Logger.swift */; };
-		DEDE8D8A20D10E9000A3FAC7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDE8D3F20D10A6D00A3FAC7 /* Info.plist */; };
-		DEDE8D8B20D10E9800A3FAC7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDE8D4B20D10A6D00A3FAC7 /* Info.plist */; };
-		DEDE8D8C20D10E9E00A3FAC7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDE8D5B20D10AD500A3FAC7 /* Info.plist */; };
-		DEDE8D8D20D10EAE00A3FAC7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDE8D6820D10AE800A3FAC7 /* Info.plist */; };
-		DEDE8D8E20D10EB600A3FAC7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDE8D7420D10AE800A3FAC7 /* Info.plist */; };
-		DEDE8D8F20D10ED100A3FAC7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDDC0CB20CFF33D00C77C3B /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,11 +64,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE1B9CEB20D11C8E002F401C /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		DEDDC0BB20CFF33D00C77C3B /* PCLogger_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PCLogger_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDDC0BE20CFF33D00C77C3B /* PCLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCLogger.h; sourceTree = "<group>"; };
 		DEDDC0BF20CFF33D00C77C3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEDDC0C420CFF33D00C77C3B /* PCLogger-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PCLogger-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEDDC0C920CFF33D00C77C3B /* PCLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCLoggerTests.swift; sourceTree = "<group>"; };
+		DEDDC0C920CFF33D00C77C3B /* PCLogger_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCLogger_iOSTests.swift; sourceTree = "<group>"; };
 		DEDDC0CB20CFF33D00C77C3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEDDC0D520CFF34B00C77C3B /* NSLogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLogWriter.swift; sourceTree = "<group>"; };
 		DEDDC0D620CFF34B00C77C3B /* LogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWriter.swift; sourceTree = "<group>"; };
@@ -194,6 +192,7 @@
 			children = (
 				DEDDC0DB20CFF35400C77C3B /* Logger.swift */,
 				DE12BB0620D0F24D00EF3F6F /* LogWriter */,
+				DE1B9CEB20D11C8E002F401C /* Activity.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -201,7 +200,7 @@
 		DEDDC0C820CFF33D00C77C3B /* PCLogger-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				DEDDC0C920CFF33D00C77C3B /* PCLoggerTests.swift */,
+				DEDDC0C920CFF33D00C77C3B /* PCLogger_iOSTests.swift */,
 				DEDDC0CB20CFF33D00C77C3B /* Info.plist */,
 			);
 			path = "PCLogger-iOSTests";
@@ -433,26 +432,29 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 1000;
-				ORGANIZATIONNAME = spc;
+				ORGANIZATIONNAME = "Pingchen Su";
 				TargetAttributes = {
 					DEDDC0BA20CFF33D00C77C3B = {
 						CreatedOnToolsVersion = 10.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 0940;
 					};
 					DEDDC0C320CFF33D00C77C3B = {
 						CreatedOnToolsVersion = 10.0;
 					};
 					DEDE8D3B20D10A6D00A3FAC7 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 					DEDE8D4320D10A6D00A3FAC7 = {
 						CreatedOnToolsVersion = 9.4;
 					};
 					DEDE8D5720D10AD500A3FAC7 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 					DEDE8D6420D10AE800A3FAC7 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 					DEDE8D6C20D10AE800A3FAC7 = {
 						CreatedOnToolsVersion = 9.4;
@@ -487,7 +489,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDE8D3620D10A2200A3FAC7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,7 +496,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDE8D8F20D10ED100A3FAC7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,7 +503,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDE8D8A20D10E9000A3FAC7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +510,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDE8D8B20D10E9800A3FAC7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +517,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDE8D8C20D10E9E00A3FAC7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +524,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDE8D8D20D10EAE00A3FAC7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,7 +531,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDE8D8E20D10EB600A3FAC7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1B9CEC20D11C8E002F401C /* Activity.swift in Sources */,
 				DEDDC0D820CFF34B00C77C3B /* NSLogWriter.swift in Sources */,
 				DEDDC0DA20CFF34B00C77C3B /* OSLogWriter.swift in Sources */,
 				DEDDC0D920CFF34B00C77C3B /* LogWriter.swift in Sources */,
@@ -557,7 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDDC0CA20CFF33D00C77C3B /* PCLoggerTests.swift in Sources */,
+				DEDDC0CA20CFF33D00C77C3B /* PCLogger_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1B9CED20D11C8E002F401C /* Activity.swift in Sources */,
 				DEDE8D8120D10E0E00A3FAC7 /* NSLogWriter.swift in Sources */,
 				DEDE8D7C20D10E0200A3FAC7 /* OSLogWriter.swift in Sources */,
 				DEDE8D8420D10E1300A3FAC7 /* LogWriter.swift in Sources */,
@@ -584,6 +581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1B9CEF20D11C8E002F401C /* Activity.swift in Sources */,
 				DEDE8D8320D10E1000A3FAC7 /* NSLogWriter.swift in Sources */,
 				DEDE8D7E20D10E0300A3FAC7 /* OSLogWriter.swift in Sources */,
 				DEDE8D8620D10E1500A3FAC7 /* LogWriter.swift in Sources */,
@@ -595,6 +593,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1B9CEE20D11C8E002F401C /* Activity.swift in Sources */,
 				DEDE8D8220D10E0F00A3FAC7 /* NSLogWriter.swift in Sources */,
 				DEDE8D7D20D10E0300A3FAC7 /* OSLogWriter.swift in Sources */,
 				DEDE8D8520D10E1400A3FAC7 /* LogWriter.swift in Sources */,
@@ -810,9 +809,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D9XU68A7AJ;
-				INFOPLIST_FILE = PCLoggerTests/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "PCLogger-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -820,6 +820,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.spc.PCLoggerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -829,9 +830,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D9XU68A7AJ;
-				INFOPLIST_FILE = PCLoggerTests/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "PCLogger-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -839,6 +841,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.spc.PCLoggerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -847,6 +850,7 @@
 		DEDE8D4E20D10A6D00A3FAC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -868,6 +872,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -875,6 +880,7 @@
 		DEDE8D4F20D10A6D00A3FAC7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -946,6 +952,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -964,6 +971,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 4.3;
@@ -974,6 +982,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -1000,6 +1009,7 @@
 		DEDE8D7720D10AE800A3FAC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -1018,6 +1028,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 11.4;
@@ -1027,6 +1038,7 @@
 		DEDE8D7820D10AE800A3FAC7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

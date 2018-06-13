@@ -2,8 +2,8 @@
 //  PCLogger_watchOS.h
 //  PCLogger-watchOS
 //
-//  Created by ST21405 on 2018/06/13.
-//  Copyright © 2018 spc. All rights reserved.
+//  Created by Pingchen Su on 2018/06/12.
+//  Copyright © 2016 Pingchen Su. Licensed under MIT.
 //
 
 #import <WatchKit/WatchKit.h>

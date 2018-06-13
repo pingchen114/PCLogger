@@ -2,8 +2,8 @@
 //  OSLogWriter.swift
 //  PCCanvasKit
 //
-//  Created by PingChen (PC) on 2018/06/12.
-//  Copyright © 2018 LINE. All rights reserved.
+//  Created by Pingchen Su on 2018/06/12.
+//  Copyright © 2016 Pingchen Su. Licensed under MIT.
 //
 
 import Foundation
