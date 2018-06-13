@@ -9,10 +9,15 @@
 import Foundation
 
 struct NSLogWriter: LogWriter {
-    static let defaultWriter: LogWriter = NSLogWriter(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
+    static let defaultWriter: LogWriter = NSLogWriter()
     
     let subsystem: String
     let category: String
+    
+    private init() {
+        self.subsystem = Logger.defaultSubSystem
+        self.category = Logger.defaultCategory
+    }
     
     init(subsystem: String, category: String) {
         self.subsystem = subsystem
@@ -20,7 +25,17 @@ struct NSLogWriter: LogWriter {
     }
     
     func log(type: LogType, dso: UnsafeRawPointer = #dsohandle, _ message: StaticString, _ args: [CVarArg]) {
-        let formattedString = "\(subsystem) (\(category)) [\(type.toString())] - \(message)"
+        let formattedString: String
+        switch (subsystem.count, category.count) {
+        case (0, 0):
+            formattedString = "[\(type.toString())] - \(message)"
+        case (_, 0):
+            formattedString = "\(subsystem) [\(type.toString())] - \(message)"
+        case (0, _):
+            formattedString = "(\(category)) [\(type.toString())] - \(message)"
+        default:
+            formattedString = "\(subsystem) (\(category)) [\(type.toString())] - \(message)"
+        }
         NSLog(formattedString, args)
     }
     

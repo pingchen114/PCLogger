@@ -30,7 +30,9 @@ public protocol LogWriter {
 }
 
 struct NullLogWriter: LogWriter {
-    static let defaultWriter: LogWriter = NullLogWriter(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
+    static let defaultWriter: LogWriter = NullLogWriter()
+    
+    private init() {}
     
     init(subsystem: String, category: String) {}
     

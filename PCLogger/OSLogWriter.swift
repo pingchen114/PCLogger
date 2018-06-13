@@ -11,9 +11,17 @@ import os.log
 
 @available(iOS 10.0, macOS 10.0, *)
  struct OSLogWriter: LogWriter {
-    static let defaultWriter: LogWriter = OSLogWriter(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
+    static let defaultWriter: LogWriter = OSLogWriter()
     
     private let writer: OSLog
+    
+    private init() {
+        if Logger.defaultSubSystem.count > 0 || Logger.defaultCategory.count > 0 {
+            writer = OSLog(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
+        } else {
+            writer = OSLog.default
+        }
+    }
     
     init(subsystem: String, category: String) {
         writer = OSLog(subsystem: subsystem, category: category)

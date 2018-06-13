@@ -37,7 +37,7 @@ public struct Logger {
     
     private static var _defaultMethod: LoggerMethod? = nil
     private static var customLoggerType: LogWriter.Type = NullLogWriter.self
-    static var defaultSubSystem: String = Bundle.main.bundleIdentifier ?? ""
+    static var defaultSubSystem: String = ""
     static var defaultCategory: String = ""
     static var defaultMethod: LoggerMethod {
         get {
