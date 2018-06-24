@@ -117,8 +117,8 @@ public extension Logger {
      
      When using `osLog` method, messages are always captured to memory or disk.
      */
-    public func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
-        writer.default(message, args, dso)
+    public func `default`(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
+        writer.default(message, dso, args)
     }
     
     /**
@@ -126,8 +126,8 @@ public extension Logger {
      
      Used for logging for additional information.
      */
-    public func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
-        writer.info(message, args, dso)
+    public func info(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
+        writer.info(message, dso, args)
     }
     
     /**
@@ -135,8 +135,8 @@ public extension Logger {
      
      Debugging messages.
      */
-    public func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
-        writer.debug(message, args, dso)
+    public func debug(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
+        writer.debug(message, dso, args)
     }
     
     /**
@@ -144,8 +144,8 @@ public extension Logger {
      
      Indicating erro conditions.
      */
-    public func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
-        writer.error(message, args, dso)
+    public func error(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
+        writer.error(message, dso, args)
     }
     
     /**
@@ -153,8 +153,8 @@ public extension Logger {
      
      Indicating unexpected undition is met.
      */
-    public func fault(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
-        writer.fault(message, args, dso)
+    public func fault(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
+        writer.fault(message, dso, args)
     }
 }
 
@@ -166,8 +166,8 @@ public extension Logger {
      
      When using `osLog` method, messages are always captured to memory or disk.
      */
-    public static func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
-        defaultMethod.writerClass.defaultWriter.default(message, args, dso)
+    public static func `default`(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
+        defaultMethod.writerClass.defaultWriter.default(message, dso, args)
     }
     
     /**
@@ -175,8 +175,8 @@ public extension Logger {
      
      Used for logging for additional information.
      */
-    public static func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
-        defaultMethod.writerClass.defaultWriter.info(message, args, dso)
+    public static func info(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
+        defaultMethod.writerClass.defaultWriter.info(message, dso, args)
     }
     
     /**
@@ -184,8 +184,8 @@ public extension Logger {
      
      Debugging messages.
      */
-    public static func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
-        defaultMethod.writerClass.defaultWriter.debug(message, args, dso)
+    public static func debug(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
+        defaultMethod.writerClass.defaultWriter.debug(message, dso, args)
     }
     
     /**
@@ -193,8 +193,8 @@ public extension Logger {
      
      Indicating erro conditions.
      */
-    public static func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
-        defaultMethod.writerClass.defaultWriter.error(message, args, dso)
+    public static func error(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
+        defaultMethod.writerClass.defaultWriter.error(message, dso, args)
     }
     
     /**
@@ -202,7 +202,7 @@ public extension Logger {
      
      Indicating unexpected undition is met.
      */
-    public static func fault(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
-        defaultMethod.writerClass.defaultWriter.fault(message, args, dso)
+    public static func fault(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
+        defaultMethod.writerClass.defaultWriter.fault(message, dso, args)
     }
 }
