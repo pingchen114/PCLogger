@@ -27,40 +27,51 @@ public struct OSLogWriter: LogWriter {
         writer = OSLog(subsystem: subsystem, category: category)
     }
     
-    public func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func `default`(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
         log(type: .default, dso: dso, message, args)
     }
     
-    public func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func info(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
         log(type: .info, dso: dso, message, args)
     }
     
-    public func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func debug(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
         log(type: .debug, dso: dso, message, args)
     }
     
-    public func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func error(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
         log(type: .error, dso: dso, message, args)
     }
     
-    public func fault(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func fault(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
         log(type: .fault, dso: dso, message, args)
     }
     
-    func log(type: LogType, dso: UnsafeRawPointer = #dsohandle, _ message: StaticString, _ args: [CVarArg]) {
+    func log(type: LogType, dso: UnsafeRawPointer = #dsohandle, _ message: StaticString, _ args: CVarArg...) {
+        let _args: [CVarArg] = args.map({ (arg) -> CVarArg in
+            if let ret = (arg as? String) {
+                return ret
+            }
+            else if arg is NSNumber {
+                return arg
+            }
+            else {
+                return String(describing: arg)
+            }
+        })
         switch args.count {
         case 0:
             os_log(message, dso: dso, log: writer, type: type.osLogType)
         case 1:
-            os_log(message, dso: dso, log: writer, type: type.osLogType, args[0])
+            os_log(message, dso: dso, log: writer, type: type.osLogType, _args[0])
         case 2:
-            os_log(message, dso: dso, log: writer, type: type.osLogType, args[0], args[1])
+            os_log(message, dso: dso, log: writer, type: type.osLogType, _args[0], _args[1])
         case 3:
-            os_log(message, dso: dso, log: writer, type: type.osLogType, args[0], args[1], args[2])
+            os_log(message, dso: dso, log: writer, type: type.osLogType, _args[0], _args[1], _args[2])
         case 4:
-            os_log(message, dso: dso, log: writer, type: type.osLogType, args[0], args[1], args[2], args[3])
+            os_log(message, dso: dso, log: writer, type: type.osLogType, _args[0], _args[1], _args[2], _args[3])
         case 5:
-            os_log(message, dso: dso, log: writer, type: type.osLogType, args[0], args[1], args[2], args[3], args[4])
+            os_log(message, dso: dso, log: writer, type: type.osLogType, _args[0], _args[1], _args[2], _args[3], _args[4])
         default:
             os_log("Too many arguments in a log!", log: writer, type: .error)
         }

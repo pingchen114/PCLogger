@@ -24,7 +24,7 @@ public struct NSLogWriter: LogWriter {
         self.category = category
     }
     
-    func log(type: LogType, dso: UnsafeRawPointer = #dsohandle, _ message: StaticString, _ args: [CVarArg]) {
+    func log(type: LogType, dso: UnsafeRawPointer = #dsohandle, _ message: StaticString, _ args: CVarArg...) {
         let formattedString: String
         switch (subsystem.count, category.count) {
         case (0, 0):
@@ -39,23 +39,23 @@ public struct NSLogWriter: LogWriter {
         NSLog(formattedString, args)
     }
     
-    public func `default`(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func `default`(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
         log(type: .default, dso: dso, message, args)
     }
     
-    public func info(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func info(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
         log(type: .info, dso: dso, message, args)
     }
     
-    public func debug(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func debug(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
         log(type: .debug, dso: dso, message, args)
     }
     
-    public func error(_ message: StaticString, _ args: [CVarArg] = [], _ dso: UnsafeRawPointer = #dsohandle) {
+    public func error(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
         log(type: .error, dso: dso, message, args)
     }
     
-    public func fault(_ message: StaticString, _ args: [CVarArg], _ dso: UnsafeRawPointer) {
+    public func fault(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: CVarArg...) {
         log(type: .fault, dso: dso, message, args)
     }
 }
