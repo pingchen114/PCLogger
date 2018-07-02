@@ -15,9 +15,9 @@ public struct NullLogWriter: LogWriter {
     
     public init(subsystem: String, category: String) {}
     
-    public func `default`(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: CVarArg...) {}
-    public func info(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: CVarArg...) {}
-    public func debug(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: CVarArg...) {}
-    public func error(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: CVarArg...) {}
-    public func fault(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: CVarArg...) {}
+    public func `default`(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: [Any]) {}
+    public func info(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: [Any]) {}
+    public func debug(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: [Any]) {}
+    public func error(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: [Any]) {}
+    public func fault(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: [Any]) {}
 }

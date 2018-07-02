@@ -27,33 +27,33 @@ public struct OSLogWriter: LogWriter {
         writer = OSLog(subsystem: subsystem, category: category)
     }
     
-    public func `default`(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
+    public func `default`(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: [Any]) {
         log(type: .default, dso: dso, message, args)
     }
     
-    public func info(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
+    public func info(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: [Any]) {
         log(type: .info, dso: dso, message, args)
     }
     
-    public func debug(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
+    public func debug(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: [Any]) {
         log(type: .debug, dso: dso, message, args)
     }
     
-    public func error(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
+    public func error(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: [Any]) {
         log(type: .error, dso: dso, message, args)
     }
     
-    public func fault(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: CVarArg...) {
+    public func fault(_ message: StaticString, _ dso: UnsafeRawPointer = #dsohandle, _ args: [Any]) {
         log(type: .fault, dso: dso, message, args)
     }
     
-    func log(type: LogType, dso: UnsafeRawPointer = #dsohandle, _ message: StaticString, _ args: CVarArg...) {
+    func log(type: LogType, dso: UnsafeRawPointer = #dsohandle, _ message: StaticString, _ args: [Any]) {
         let _args: [CVarArg] = args.map({ (arg) -> CVarArg in
             if let ret = (arg as? String) {
                 return ret
             }
             else if arg is NSNumber {
-                return arg
+                return arg as! CVarArg
             }
             else {
                 return String(describing: arg)

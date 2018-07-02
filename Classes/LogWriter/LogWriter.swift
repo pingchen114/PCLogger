@@ -22,9 +22,9 @@ public protocol LogWriter {
     
     static var defaultWriter: LogWriter { get }
     
-    func `default`(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: CVarArg...)
-    func info(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: CVarArg...)
-    func debug(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: CVarArg...)
-    func error(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: CVarArg...)
-    func fault(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: CVarArg...)
+    func `default`(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: [Any])
+    func info(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: [Any])
+    func debug(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: [Any])
+    func error(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: [Any])
+    func fault(_ message: StaticString, _ dso: UnsafeRawPointer, _ args: [Any])
 }
