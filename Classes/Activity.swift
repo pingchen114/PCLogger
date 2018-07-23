@@ -47,11 +47,7 @@ private let OS_ACTIVITY_CURRENT = unsafeBitCast(dlsym(UnsafeMutableRawPointer(bi
 public struct Activity {
     
     /// Support flags for OSActivity.
-    public struct Options: OptionSet {
-        public let rawValue: UInt32
-        public init(rawValue: UInt32) {
-            self.rawValue = rawValue
-        }
+    public enum Flag: UInt32 {
         
         /// Detach a newly created activity from a parent activity, if any.
         ///
@@ -59,26 +55,42 @@ public struct Activity {
         /// only note what activity "created" the new one, but will make the
         /// new activity a top level activity. This allows seeing what
         /// activity triggered work without actually relating the activities.
-        public static let detached = Options(rawValue: OS_ACTIVITY_FLAG_DETACHED.rawValue)
+        case detached
         /// Will only create a new activity if none present.
         ///
         /// If an activity ID is already present, a new activity will be
         /// returned with the same underlying activity ID.
-        @available(OSX 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *)
-        public static let ifNonePresent = Options(rawValue: OS_ACTIVITY_FLAG_IF_NONE_PRESENT.rawValue)
+        // @available(OSX 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *)
+        case ifNonePresent
+        
+        case `default`
+        
+        fileprivate var flag: os_activity_flag_t {
+            switch self {
+            case .detached:
+                return OS_ACTIVITY_FLAG_DETACHED
+            case .default:
+                return OS_ACTIVITY_FLAG_DEFAULT
+            default:
+                if #available(OSX 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *), case .ifNonePresent = self {
+                    return OS_ACTIVITY_FLAG_IF_NONE_PRESENT
+                }
+                Logger.fault(message: "Unrecognized activity flag (%{public}d)", self.rawValue)
+            }
+            return OS_ACTIVITY_FLAG_DEFAULT
+        }
     }
     
     private let opaque: AnyObject
     
     /// Creates an activity.
-    public init(_ description: StaticString, dso: UnsafeRawPointer? = #dsohandle, options: Options = []) {
+    public init(_ description: StaticString, dso: UnsafeRawPointer? = #dsohandle, options: Flag = .default) {
         self.opaque = description.withUTF8Buffer { (buf: UnsafeBufferPointer<UInt8>) -> AnyObject in
             return buf.baseAddress!.withMemoryRebound(to: Int8.self, capacity: buf.count, {
-                let flags = os_activity_flag_t(rawValue: options.rawValue)
                 if #available(OSX 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *) {
-                    return _os_activity_create(dso, $0, OS_ACTIVITY_CURRENT, flags)
+                    return _os_activity_create(dso, $0, OS_ACTIVITY_CURRENT, options.flag)
                 } else {
-                    return LegacyActivityContext(dsoHandle: dso, description: $0, flags: flags)
+                    return LegacyActivityContext(dsoHandle: dso, description: $0, flags: options.flag)
                 }
             })
         }
@@ -156,13 +168,20 @@ public struct Activity {
     
     /// Creates an activity.
     @available(OSX 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *)
-    public init(_ description: StaticString, dso: UnsafeRawPointer? = #dsohandle, parent: Activity, options: Options = []) {
+    public init(_ description: StaticString, dso: UnsafeRawPointer? = #dsohandle, parent: Activity, options: Flag = .default) {
         self.opaque = description.withUTF8Buffer { (buf: UnsafeBufferPointer<UInt8>) -> AnyObject in
             return buf.baseAddress!.withMemoryRebound(to: Int8.self, capacity: buf.count, {
-                let flags = os_activity_flag_t(rawValue: options.rawValue)
-                return _os_activity_create(dso, $0, Unmanaged.passRetained(parent.opaque), flags)
+                return _os_activity_create(dso, $0, Unmanaged.passRetained(parent.opaque), options.flag)
             })
             
+        }
+    }
+    
+    public init(_ description: StaticString, parent: Activity, _ dso: UnsafeRawPointer = #dsohandle) {
+        if #available(OSX 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *) {
+            self.init(description, dso: dso, parent: parent, options: .default)
+        } else {
+            self.init(description, dso: dso, options: .default)
         }
     }
     
