@@ -21,7 +21,7 @@ public struct Logger {
         /// Disable logging.
         case disabled
         /// Use Apple's OSLog for logging.
-        @available(OSX 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *) case osLog
+        case osLog
         /// Use NSLog for logging.
         case nsLog
         /// Use custom logger writer for logging.
