@@ -16,11 +16,20 @@ public struct OSLogWriter: LogWriter {
     private let writer: OSLog
     
     private init() {
-        if Logger.defaultSubSystem.count > 0 || Logger.defaultCategory.count > 0 {
+        if !Logger.defaultSubSystem.isEmpty || !Logger.defaultCategory.isEmpty {
             writer = OSLog(subsystem: Logger.defaultSubSystem, category: Logger.defaultCategory)
         } else {
             writer = OSLog.default
         }
+    }
+
+    @available(iOS 12.0, *)
+    public var signpostEnabled: Bool {
+        get { return writer.signpostsEnabled }
+    }
+
+    public func isEnabled(type: LogType) -> Bool {
+        return writer.isEnabled(type: type.osLogType)
     }
     
     public init(subsystem: String, category: String) {
@@ -72,6 +81,8 @@ public struct OSLogWriter: LogWriter {
             os_log(message, dso: dso, log: writer, type: type.osLogType, _args[0], _args[1], _args[2], _args[3])
         case 5:
             os_log(message, dso: dso, log: writer, type: type.osLogType, _args[0], _args[1], _args[2], _args[3], _args[4])
+        case 6:
+            os_log(message, dso: dso, log: writer, type: type.osLogType, _args[0], _args[1], _args[2], _args[3], _args[4], _args[5])
         default:
             os_log("Too many arguments in a log!", log: writer, type: .error)
         }
