@@ -117,7 +117,7 @@ public extension Logger {
      
      When using `osLog` method, messages are always captured to memory or disk.
      */
-    public func `default`(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
+    func `default`(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
         writer.default(message, dso, args)
     }
     
@@ -126,7 +126,7 @@ public extension Logger {
      
      Used for logging for additional information.
      */
-    public func info(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
+    func info(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
         writer.info(message, dso, args)
     }
     
@@ -135,7 +135,7 @@ public extension Logger {
      
      Debugging messages.
      */
-    public func debug(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
+    func debug(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
         writer.debug(message, dso, args)
     }
     
@@ -144,7 +144,7 @@ public extension Logger {
      
      Indicating erro conditions.
      */
-    public func error(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
+    func error(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
         writer.error(message, dso, args)
     }
     
@@ -153,7 +153,7 @@ public extension Logger {
      
      Indicating unexpected undition is met.
      */
-    public func fault(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
+    func fault(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
         writer.fault(message, dso, args)
     }
 }
@@ -166,7 +166,7 @@ public extension Logger {
      
      When using `osLog` method, messages are always captured to memory or disk.
      */
-    public static func `default`(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
+    static func `default`(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
         defaultMethod.writerClass.defaultWriter.default(message, dso, args)
     }
     
@@ -175,7 +175,7 @@ public extension Logger {
      
      Used for logging for additional information.
      */
-    public static func info(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
+    static func info(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
         defaultMethod.writerClass.defaultWriter.info(message, dso, args)
     }
     
@@ -184,7 +184,7 @@ public extension Logger {
      
      Debugging messages.
      */
-    public static func debug(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
+    static func debug(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
         defaultMethod.writerClass.defaultWriter.debug(message, dso, args)
     }
     
@@ -193,7 +193,7 @@ public extension Logger {
      
      Indicating erro conditions.
      */
-    public static func error(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
+    static func error(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
         defaultMethod.writerClass.defaultWriter.error(message, dso, args)
     }
     
@@ -202,7 +202,7 @@ public extension Logger {
      
      Indicating unexpected undition is met.
      */
-    public static func fault(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
+    static func fault(_ dso: UnsafeRawPointer = #dsohandle, message: StaticString, _ args: Any...) {
         defaultMethod.writerClass.defaultWriter.fault(message, dso, args)
     }
 }

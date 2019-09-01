@@ -183,8 +183,8 @@
 		DEDDC0BD20CFF33D00C77C3B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DEDDC0DB20CFF35400C77C3B /* Logger.swift */,
 				DE12BB0620D0F24D00EF3F6F /* LogWriter */,
+				DEDDC0DB20CFF35400C77C3B /* Logger.swift */,
 				DE1B9CEB20D11C8E002F401C /* Activity.swift */,
 			);
 			path = Classes;
@@ -392,7 +392,7 @@
 				TargetAttributes = {
 					DEDDC0BA20CFF33D00C77C3B = {
 						CreatedOnToolsVersion = 10.0;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1100;
 					};
 					DEDE8D3B20D10A6D00A3FAC7 = {
 						CreatedOnToolsVersion = 9.4;
@@ -414,6 +414,7 @@
 					};
 					FB9D42AE20D1481000A6CC2B = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -423,6 +424,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = DEDDC0B120CFF33D00C77C3B;
 			productRefGroup = DEDDC0BC20CFF33D00C77C3B /* Products */;
@@ -735,7 +737,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -762,7 +764,7 @@
 				PRODUCT_NAME = PCLogger;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1037,7 +1039,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.spc.PCLoggerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1056,7 +1058,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.spc.PCLoggerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

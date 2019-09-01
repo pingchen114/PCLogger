@@ -47,7 +47,7 @@ public struct OSLogWriter: LogWriter {
         log(type: .fault, dso: dso, message, args)
     }
     
-    func log(type: LogType, dso: UnsafeRawPointer = #dsohandle, _ message: StaticString, _ args: [Any]) {
+    internal func log(type: LogType, dso: UnsafeRawPointer = #dsohandle, _ message: StaticString, _ args: [Any]) {
         let _args: [CVarArg] = args.map({ (arg) -> CVarArg in
             if let ret = (arg as? String) {
                 return ret
